@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styled Table</title>
+  <style>
+    @import url('https://pro.fontawesome.com/releases/v6.0.0-beta1/css/all.css');
+
+button.neumorphic {
+  container-type: inline-size;
+  aspect-ratio: 1/1;
+  border: 0.5rem solid transparent;
+  border-radius: 1rem;
+  color: hsl(0 0% 90%); /* Lighter text color for dark mode */
+  background: none;
+  
+  display: grid;
+  place-content: center;
+  gap: 1rem;
+  
+  --shadow: 
+    -.5rem -.5rem 1rem hsl(0 0% 50% / .15),  /* Light shadow */
+    .5rem .5rem 1rem hsl(0 0% 20% / .25); /* Darker shadow */
+  box-shadow: var(--shadow);
+  outline: none;
+  transition: all 0.1s;
+  
+  &:hover, &:focus-visible {
+    color: hsl(10 80% 70%); /* Adjusted color for hover */
+    scale: 1.1;
+  }
+
+  &:active, &.active {
+    box-shadow:
+      var(--shadow),
+      inset .5rem .5rem 1rem hsl(0 0% 20% / .4), /* Inner shadow */
+      inset -.5rem -.5rem 1rem hsl(0 0% 20% / .4); /* Inner light shadow */
+    color: hsl(10 80% 70%);
+    > i { font-size: 28px; }
+    > span { font-size: 13px; }
+  }
+
+  > i {
+    font-size: 31px;
+  }
+
+  > span {
+    font-family: system-ui, sans-serif;
+    font-size: 16px;
+  }
+}
+
+body {
+  background-color: #151B23; /* Dark background color */
+  color: hsl(0 0% 90%); /* Lighter text for readability */
+  padding: 2rem;
+}
+
+h1 {
+  text-align: center;
+  color: hsl(0 0% 90%); /* Light text color for headings */
+  font-family: system-ui, sans-serif;
+  font-size: 3rem;
+}
+
+.buttons {
+  display: grid;
+  width: min(75rem, 100%);
+  margin-inline: auto;
+  grid-template-columns: repeat(auto-fit, minmax(min(8rem, 100%), 1fr));
+  gap: 2rem;
+}
+
+  </style>
+</head>
+<body>
+  <h1></h1>
+<div class="buttons">  
+  <button class="neumorphic active">
+    <i class="fa-light fa-cog"></i>
+    <span>C</span>
+  </button>
+  <button class="neumorphic">
+    <i class="fa-light fa-cogs"></i>
+    <span>C++</span>
+  </button>
+  <button class="neumorphic">
+    <i class="fa-sharp fa-light fa-space-station-moon"></i>
+    <span>lua</span>
+  </button>
+  <button class="neumorphic">
+    <i class="fa-light fa-snake"></i>
+    <span>Python</span>
+  </button>
+  <button class="neumorphic">
+    <i class="fa-light fa-seedling"></i>
+    <span>Rust</span>
+  </button>
+  <button class="neumorphic">
+    <i class="fa-light fa-disease"></i>
+    <span>...</span>
+  </button>
+</div>
+</body>
+</html>
